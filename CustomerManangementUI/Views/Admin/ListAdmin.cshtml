@@ -1,0 +1,38 @@
+﻿@using CustomerManangementService.Entities.Concrete;
+@model IEnumerable<Admin>
+@{
+    Layout = "_Layout";
+}
+<table id="myTable" class="hover table table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <th>Kullanıcı Adı</th>
+            <th>Şifre</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var admin in Model)
+        {
+            <tr>
+                <td>@admin.username</td>
+                <td>@admin.password</td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Admin" asp-action="UpdateAdmin" asp-route-id="@admin.adminId">Güncelle</a>
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Admin" asp-action="DeleteAdmin" asp-route-id="@admin.adminId">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Kullanıcı Adı</th>
+            <th>Şifre</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </tfoot>
+</table>

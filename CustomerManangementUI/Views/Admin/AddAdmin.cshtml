@@ -1,0 +1,33 @@
+﻿@using CustomerManangementService.Entities.Concrete;
+@model Admin
+@{
+    Layout = "_Layout";
+}
+<div class="container">
+    <main>
+        <p>Admin Ekle</p>
+    </main>
+    <div class="col-md-7 col-lh-8">
+        <form class="needs-validation" asp-controller="Admin" asp-action="AddAdmin" method="post" enctype="multipart/form-data">
+            <div class="row g-3">
+                <div class="col-12">
+                    <label for="username" class="col-form-label">Kullanıcı Adı</label>
+                    <input type="text" class="form-control" id="username" placeholder="Kullanıcı Adı" asp-for="username" required />
+                    <div class="invalid-feedback">
+                        Geçerli bir kullanıcı adı giriniz.
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label for="password" class="col-form-label">Şifre</label>
+                    <input type="password" class="form-control" id="password" placeholder="Şifre" asp-for="password" required />
+                    <div class="invalid-feedback">
+                        Geçerli bir şifre giriniz.
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+
+            <button class="w-100 btn btn-primary btn-lg" type="submit">Ekle</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+﻿@using CustomerManangementService.Entities.Concrete;
+@model Admin
+@{
+    Layout = "_Layout";
+}
+<div>
+    <div class="container">
+        <main>
+            <p>
+                Admin Bilgileri Güncelle
+            </p>
+        </main>
+        <div class="rpw g-5">
+            <div class="mol-md-7 mol-lg-8">
+                <form class="needs-validation" asp-controller="Admin" asp-action="UpdateAdmin" method="post" enctype="multipart/form-data">
+                    <div class="row g-3">
+                        @Html.HiddenFor(x => x.adminId)
+                        <div class="col-12">
+                            <label for="username" class="form-label">Kullanıcı Adı</label>
+                            <input type="text" class="form-control" id="username" placeholder="@Model.username" value="@Model.username" asp-for="username" required />
+                            <div class="invalid-feedback">
+                                Geçerli bir kullanıcı adı giriniz.
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="password" class="form-label">Şifre</label>
+                            <input type="text" class="form-control" id="password" placeholder="@Model.password" value="@Model.password" asp-for="password" required />
+                            <div class="invalid-feedback">
+                                Geçerli bir şifre giriniz.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary btn-lg right-button" type="submit">Güncelle</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

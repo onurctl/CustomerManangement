@@ -1,0 +1,44 @@
+﻿@using CustomerManangementService.Entities.DTOs;
+@model List<CustomerDTO>
+@{
+    Layout = "_Layout";
+}
+<table id="myTable" class="hover table table-bordered" style="width:100%">
+    <thead>
+        <tr>
+            <th>Admin</th>
+            <th>Müşteri Adı</th>
+            <th>Telefon Numarası</th>
+            <th>Adres</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var customer in Model)
+        {
+            <tr>
+                <td>@customer.Admin</td>
+                <td>@customer.nameSurname</td>
+                <td>@customer.phone</td>
+                <td>@customer.adress</td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Customer" asp-action="UpdateCustomer" asp-route-id="@customer.customerId">Güncelle</a>
+                </td>
+                <td>
+                    <a class="btn btn-primary" asp-controller="Customer" asp-action="DeleteCustomer" asp-route-id="@customer.customerId">Sil</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <tfoot>
+        <tr>
+            <th>Admin</th>
+            <th>Müşteri Adı</th>
+            <th>Telefon Numarası</th>
+            <th>Adres</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </tfoot>
+</table>

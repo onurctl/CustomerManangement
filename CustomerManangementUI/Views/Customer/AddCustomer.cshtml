@@ -1,0 +1,40 @@
+﻿@using CustomerManangementService.Entities.Concrete;
+@model Customer
+@{
+    Layout = "_Layout";
+}
+<div class="container">
+    <main>
+        <p>Müşteri Ekle</p>
+    </main>
+    <div class="col-md-7 col-lh-8">
+        <form class="needs-validation" asp-controller="Customer" asp-action="AddCustomer" method="post" enctype="multipart/form-data">
+            <div class="row g-3">
+                <div class="col-12">
+                    <label for="nameSurname" class="col-form-label">Ad Soyad</label>
+                    <input type="text" class="form-control" id="nameSurname" placeholder="Ad Soyad" asp-for="nameSurname" required />
+                    <div class="invalid-feedback">
+                        Geçerli bir kullanıcı adı giriniz.
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label for="phone" class="col-form-label">Ad Soyad</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="Telefon Numarası" asp-for="phone" required />
+                    <div class="invalid-feedback">
+                        Geçerli bir telefon numarası giriniz.
+                    </div>
+                </div>
+                <div class="col-12">
+                    <label for="adress" class="col-form-label">Adres</label>
+                    <input type="text" class="form-control" id="adress" placeholder="Adres" asp-for="adress" required />
+                    <div class="invalid-feedback">
+                        Geçerli bir adres giriniz.
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4">
+
+            <button class="w-100 btn btn-primary btn-lg" type="submit">Ekle</button>
+        </form>
+    </div>
+</div>
